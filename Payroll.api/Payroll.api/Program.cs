@@ -1,6 +1,12 @@
+using Payroll.api.Repository;
+using Payroll.api.Service;
+using PayrollApi.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddScoped<IPayrollRepository, PayrollRepository>();
+builder.Services.AddScoped<IPayrollService, PayrollService>();
 builder.Services.AddControllers();
 
 

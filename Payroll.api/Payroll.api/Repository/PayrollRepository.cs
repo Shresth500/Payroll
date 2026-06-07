@@ -12,11 +12,8 @@ namespace PayrollApi.Repositories
         private readonly string _connectionString;
 
         // Connection string is injected from appsettings.json — never hardcoded
-        public PayrollRepository(IConfiguration configuration)
-        {
-            _connectionString = configuration.GetConnectionString("PayrollDb")
+        public PayrollRepository(IConfiguration configuration) => _connectionString = configuration.GetConnectionString("PayrollDb")
                 ?? throw new InvalidOperationException("Connection string 'PayrollDb' not found.");
-        }
 
         // Creates a new open SQL connection each time
         // Dapper closes it automatically after each query
