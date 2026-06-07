@@ -6,7 +6,7 @@ namespace Payroll.api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class EmployeesController(IPayrollService _service, ILogger<EmployeesController> _logger) : ControllerBase
+    public class EmployeesController(IEmployeeService _service, ILogger<EmployeesController> _logger) : ControllerBase
     {
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]

@@ -4,32 +4,11 @@ using System.Data.SqlClient;
 
 namespace Payroll.api.Service;
 
-public class PayrollService : IPayrollService
+public class PayrollService(IPayrollRepository _repository, ILogger<PayrollService> _logger) : IPayrollService
 {
-    private readonly IPayrollRepository _repository;
-    private readonly ILogger<PayrollService> _logger;
 
-    public PayrollService(IPayrollRepository repository, ILogger<PayrollService> logger)
-    {
-        _repository = repository;
-        _logger = logger;
-    }
-
-    // --------------------------------------------------------
-    // GET all active employees
-    // --------------------------------------------------------
-    public async Task<IEnumerable<Employee>> GetAllEmployeesAsync()
-    {
-        return await _repository.GetAllEmployeesAsync();
-    }
     public async Task<PayrollRun> RunPayrollAsync(int month, int year)
     {
-        // Basic validation (the SP validates too, but fail fast here)
-        if (month < 1 || month > 12)
-            throw new ArgumentException("Month must be between 1 and 12.", nameof(month));
-
-        if (year < 2000 || year > 2100)
-            throw new ArgumentException("Year must be between 2000 and 2100.", nameof(year));
 
         try
         {
@@ -55,7 +34,6 @@ public class PayrollService : IPayrollService
 
         if (year < 2000 || year > 2100)
             throw new ArgumentException("Year must be between 2000 and 2100.", nameof(year));
-
         return await _repository.GetPayrollRunAsync(month, year);
     }
 
