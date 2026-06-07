@@ -4,5 +4,5 @@ namespace Payroll.api.Repository;
 
 public interface IEmployeeRepository
 {
-    Task<PagedResult<Employee>> GetAllEmployeesAsync(int page, int pageSize);
+    Task<PagedResult<Employee>> GetAllEmployeesAsync(int page, int pageSize, int? month, int? year);
 }

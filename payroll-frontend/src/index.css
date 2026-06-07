@@ -1,0 +1,61 @@
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── CSS Variables ── */
+:root {
+  --bg:          #FAFAF7;
+  --surface:     #FFFFFF;
+  --border:      #E8E6E0;
+  --border-lt:   #F0EDE6;
+  --accent:      #2E7D32;
+  --accent-lt:   #EDF7EE;
+  --accent-dark: #1B5E20;
+  --header-bg:   #1C1C1A;
+  --text:        #1C1C1A;
+  --text-muted:  #888680;
+  --red:         #C62828;
+  --red-lt:      #FDECEA;
+  --amber:       #E65100;
+  --amber-lt:    #FFF8E1;
+  --radius:      6px;
+  --radius-lg:   10px;
+  --shadow:      0 1px 4px rgba(0,0,0,0.07);
+  --shadow-lg:   0 16px 48px rgba(0,0,0,0.16);
+  --font:        'DM Sans', system-ui, sans-serif;
+  --mono:        'DM Mono', ui-monospace, monospace;
+}
+
+/* ── Base ── */
+body {
+  font-family: var(--font);
+  background:  var(--bg);
+  color:       var(--text);
+  font-size:   14px;
+  line-height: 1.5;
+  min-height:  100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+button { font-family: var(--font); }
+input, select { font-family: var(--font); }
+
+/* ── Spinner keyframe ── */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Fade in ── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ── Slide up (modal) ── */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: none; }
+}
