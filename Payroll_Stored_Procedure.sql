@@ -39,6 +39,11 @@ BEGIN
         RETURN;
     END;
 
+    -- --------------------------------------------------------
+    -- 3. Collect active employees with their attendance for
+    --    this period. Employees with no attendance record are
+    --    included with DaysPresent = 0 (assumption noted in README).
+    -- --------------------------------------------------------
     DECLARE @Employees TABLE
     (
         EmployeeId       INT            NOT NULL,
