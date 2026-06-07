@@ -1,0 +1,93 @@
+# =========================
+# Build Results
+# =========================
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# =========================
+# Visual Studio & VS Code
+# =========================
+.vs/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# =========================
+# JetBrains Rider / IntelliJ
+# =========================
+.idea/
+*.sln.iml
+
+# =========================
+# NuGet
+# =========================
+*.nupkg
+*.snupkg
+packages/
+!packages/build/
+.nuget/packages/
+
+# =========================
+# Publish Output
+# =========================
+publish/
+# NOTE: If you decide to place your HTML/JS frontend assets inside wwwroot,
+# keep these lines commented out so Git tracks your user interface pages!
+# wwwroot/dist/
+# wwwroot/lib/
+
+# =========================
+# Configuration Files & Secrets
+# =========================
+appsettings.Development.json
+appsettings.Local.json
+appsettings.*.local.json
+secrets.json
+.env
+.env.*
+
+# =========================
+# Databases & LocalDB
+# =========================
+*.mdf
+*.ldf
+
+# =========================
+# Test Results & Coverage
+# =========================
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+coverage/
+coverage.xml
+*.coverage
+*.coveragexml
+
+# =========================
+# ReSharper
+# =========================
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# =========================
+# Cloud & Infrastructure (Azure / Docker)
+# =========================
+PublishProfiles/
+*.publishsettings
+docker-compose.override.yml
+
+# =========================
+# OS & Temporary Files
+# =========================
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+*.temp
+*.bak
+*.cache
+ScaffoldingReadMe.txt
