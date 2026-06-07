@@ -11,7 +11,19 @@ namespace Payroll.api.Controllers
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> GetAllEmployees() => Ok(await _service.GetAllEmployeesAsync());
+        public async Task<IActionResult> GetAllEmployees(
+            [FromQuery] int page = 1,
+            [FromQuery] int pageSize = 10)
+        {
+            if (page < 1)
+                return BadRequest(new { message = "Page must be greater than 0." });
+
+            if (pageSize < 1 || pageSize > 100)
+                return BadRequest(new { message = "PageSize must be between 1 and 100." });
+
+            var result = await _service.GetAllEmployeesAsync(page, pageSize);
+            return Ok(result);
+        }
 
     }
 }

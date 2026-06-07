@@ -4,5 +4,5 @@ namespace Payroll.api.Service;
 
 public interface IEmployeeService
 {
-    Task<IEnumerable<Employee>> GetAllEmployeesAsync();
+    Task<PagedResult<Employee>> GetAllEmployeesAsync(int page, int pageSize);
 }
