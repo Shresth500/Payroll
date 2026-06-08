@@ -1,15 +1,13 @@
 // Top navigation header
-// Props:
-//   activeTab   'payroll' | 'employees'
-//   onTabChange (tab) => void
-export default function Header({ activeTab, onTabChange }) {
+// Props matched with App.jsx
+export default function Header({ currentTab, setCurrentTab }) {
   const navBtn = (tab, label) => (
     <button
-      onClick={() => onTabChange(tab)}
+      onClick={() => setCurrentTab(tab)}
       style={{
-        background:    activeTab === tab ? '#2E2E2A' : 'none',
+        background:    currentTab === tab ? '#2E2E2A' : 'none',
         border:        'none',
-        color:         activeTab === tab ? '#FAFAF7' : 'rgba(250,250,247,0.5)',
+        color:         currentTab === tab ? '#FAFAF7' : 'rgba(250,250,247,0.5)',
         padding:       '6px 14px',
         borderRadius:  6,
         fontSize:      13,
